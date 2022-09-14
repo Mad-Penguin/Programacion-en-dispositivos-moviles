@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSalud.MainPage">
+
+    <StackLayout>
+        <Image HeightRequest="200" WidthRequest="200" Source="https://i.pinimg.com/originals/b0/14/83/b01483f04e120f3949d00dc75f135b52.png"></Image>
+        <Label Text="Bienvenido a App Salud"></Label>
+
+        <Entry x:Name="txt_nombre" Placeholder="Nombre"></Entry>
+        <Button x:Name="btn_entrar" Text="Entrar"></Button>
+        
+    </StackLayout>
+
+</ContentPage>

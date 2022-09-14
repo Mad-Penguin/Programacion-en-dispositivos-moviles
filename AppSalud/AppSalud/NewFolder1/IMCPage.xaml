@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSalud.NewFolder1.IMCPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="img_imc" HeightRequest="250" Margin="0,40,0,0"></Image>
+            <Label x:Name="lbl_imc" FontSize="Title" Margin="40,40,40,0" HorizontalTextAlignment="Center"></Label>
+            <Button x:Name="btn_recomendaciones" Text="Recomendaciones"  Margin="40,0,40,40"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
