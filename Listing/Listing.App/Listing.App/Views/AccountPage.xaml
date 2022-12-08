@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listing.App.Views.AccountPage">
+    <ContentPage.Content>
+        <StackLayout Padding="0,20,10,0" Orientation="Vertical" >
+            <Image x:Name="image_user" HeightRequest="150" Margin="0,0,0,0"></Image>
+            <Label x:Name="label_username" FontSize="Title" Margin="0,0,0,0" HorizontalTextAlignment="Center"></Label>
+            <Label x:Name="label_institution" FontSize="Medium" Margin="0,0,0,0" HorizontalTextAlignment="Center"></Label>
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="logout_profile" Grid.Row="0" Grid.Column="1" Text="Logout" Margin="0,0,40,5" HeightRequest="140" BackgroundColor="DarkSlateGray"></Button>
+                <Button x:Name="edit_profile" Grid.Row="1" Grid.Column="0" Text="Edit profile"  Margin="40,0,0,5" BackgroundColor="LightSlateGray"  MinimumHeightRequest="10"> </Button>
+                <Button x:Name="delete_profile" Grid.Row="1" Grid.Column="1" Text="Delete profile"  Margin="0,0,40,5" BackgroundColor="#FF6464"  MinimumHeightRequest="10"></Button>
+                
+                <Button x:Name="create_list" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Create List"  Margin="40,0,40,5"></Button>
+            </Grid>
+            
+            
+            <!--
+            <Button x:Name="show_favorites" Text="Show favorites"  Margin="40,0,40,40"></Button>
+            -->
+            
+            <Label x:Name="label_list" Text="My lists" FontSize="Large" FontAttributes="Bold" Margin="20,0,0,0" HorizontalTextAlignment="Start"></Label>
+
+            <ListView x:Name="AccountList"
+            ItemsSource="{Binding ListPartialDisplay}"
+            CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Title}" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Small" FontAttributes="Bold"></Label>
+                                <Button x:Name="edit_list" Grid.Column="1" Text="Edit"  FontSize="Small" BackgroundColor="LightSlateGray" Clicked="EditButtonClicked"></Button>
+                                <Button x:Name="delete_list" Grid.Column="2" Text="Delete" FontSize="Small" BackgroundColor="#FF6464" Clicked="DeleteButtonClicked" ></Button>
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

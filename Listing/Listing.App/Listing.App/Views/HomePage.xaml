@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listing.App.Views.HomePage">
+  <ListView x:Name="HomeList"
+            ItemsSource="{Binding ListPartialDisplay}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement">
+    <!--Built in Cells-->
+        <!--
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding .}" />
+        </DataTemplate>
+    </ListView.ItemTemplate>
+      -->
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+
+                    <Grid>
+
+                        <Label Text="{Binding Title}" Grid.Column="0" VerticalTextAlignment="Center" FontSize="Small" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+                        <!--
+                        <Button x:Name="edit_list" Grid.Column="1" Text="Edit"  FontSize="Small" BackgroundColor="LightSlateGray"></Button>
+                        <Button x:Name="delete_list" Grid.Column="2" Text="Delete" FontSize="Small" BackgroundColor="#FF6464" ></Button>
+                        -->
+                    </Grid>
+
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

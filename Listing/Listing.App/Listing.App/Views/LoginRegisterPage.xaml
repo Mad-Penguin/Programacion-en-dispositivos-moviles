@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listing.App.Views.LoginRegisterPage">
+    <ContentPage.Content>
+        <StackLayout Margin="40,40,40,40">
+            <Image HeightRequest="200" WidthRequest="200" Source="https://assets.webiconspng.com/uploads/2017/01/List-Vector-Art-Icon.png"></Image>
+            <Label Text="Welcome to Listing! A social network to learn about .... everything!"></Label>
+
+            <!--Entry x:Name="txt_nombre" Placeholder="Nombre"></Entry-->
+
+            <Entry x:Name="txt_username" Placeholder="Username"></Entry>
+            <Entry x:Name="txt_email" Placeholder="Email"></Entry>
+            <Entry x:Name="txt_password" Placeholder="Password" IsPassword="True"></Entry>
+
+            <Button x:Name="btn_login" Text="Login" BackgroundColor="#47DD57"></Button>
+            <Button x:Name="btn_register" Text="Register"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

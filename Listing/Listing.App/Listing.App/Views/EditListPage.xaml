@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listing.App.Views.EditListPage">
+    <ContentPage.Content>
+        <StackLayout Padding="0,20,10,10" Orientation="Vertical" >
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <!--
+                <Label Grid.Row="0" Grid.Column="0"  x:Name="label_title" Text="Title" FontSize="Title" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                -->
+                <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" x:Name="txt_title" FontSize="Title" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Entry>
+
+                <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="txt_list_content" Placeholder="Content" Margin="20,10,0,0"></Entry>
+                <Button Grid.Row="1" Grid.Column="4" x:Name="btn_add_content" Text="Add" Margin="0,0,20,0" HorizontalOptions="StartAndExpand" HeightRequest="50"></Button>
+                <!--
+                <Label Grid.Row="2" Grid.Column="3" Text="Favorite:" FontSize="Small" Margin="0,0,0,0" VerticalTextAlignment="Center" HorizontalTextAlignment="End"></Label>
+                <CheckBox Grid.Row="2" Grid.Column="4" x:Name="favorite_checkbox" HorizontalOptions="Start" Color="#2196F3"/>
+                -->
+            </Grid>
+
+
+
+            <ListView x:Name="ListContentView"
+            ItemsSource="{Binding Items}"
+            CachingStrategy="RecycleElement" Margin="0,40,0,0">
+
+                <!--Custom View Cells-->
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid x:Name="my_grid">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Entry Text="{Binding Content}" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Small" FontAttributes="Bold"></Entry>
+                                <Button x:Name="delete_content" Grid.Column="1" Text="Delete" FontSize="Small" BackgroundColor="#FF6464"  Clicked="DeleteButtonClicked"></Button>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+            <Button x:Name="btn_save" Text="Save" HorizontalOptions="End"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

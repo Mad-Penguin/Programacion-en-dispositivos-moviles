@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listing.App.Views.ListContentPage">
+
+    <ContentPage.Content>
+        <StackLayout Padding="0,20,10,0" Orientation="Vertical" >
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" x:Name="label_title" FontSize="Title" Margin="0,0,0,0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" x:Name="label_owner" FontSize="Subtitle" Margin="0,0,0,0" HorizontalTextAlignment="Center"></Label>
+                <Label Grid.Row="2" Grid.Column="3" Text="Favorite:" FontSize="Small" Margin="0,0,0,0" VerticalTextAlignment="Center" HorizontalTextAlignment="End"></Label>
+                <CheckBox Grid.Row="2" Grid.Column="4" x:Name="favorite_checkbox" HorizontalOptions="Start" Color="#2196F3"/>
+            </Grid>
+
+            
+
+            <ListView x:Name="ListContentView"
+            ItemsSource="{Binding Items}"
+            CachingStrategy="RecycleElement">
+
+                <!--Custom View Cells-->
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+
+                                <Label Text="{Binding Content}" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Small" FontAttributes="Bold"></Label>
+                                <!--
+                        <Button x:Name="edit_list" Grid.Column="1" Text="Edit"  FontSize="Small" BackgroundColor="LightSlateGray"></Button>
+                        <Button x:Name="delete_list" Grid.Column="2" Text="Delete" FontSize="Small" BackgroundColor="#FF6464" ></Button>
+                        
+                        <Label Text="{Binding OwnerUsername}" Grid.Column="1" VerticalTextAlignment="End" FontSize="Small"></Label>
+                        -->
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listing.App.Views.TrendingPage">
+  <ListView x:Name="TrendingList"
+            ItemsSource="{Binding ListPartialDisplay}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement">
+    <!--Built in Cells-->
+        <!--
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <TextCell Text="{Binding .}" />
+        </DataTemplate>
+    </ListView.ItemTemplate>
+      -->
+    
+    <!--Custom View Cells-->
+
+        <!-- Style="{DynamicResource ListItemTextStyle}" -->
+    
+    <ListView.ItemTemplate>
+      <DataTemplate>
+                <ViewCell>
+
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="15*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="{Binding Title}" Grid.Column="1" VerticalTextAlignment="Start" FontSize="Title" FontAttributes="Bold"></Label>
+                        <Label Text="{Binding OwnerUsername}" Grid.Column="1" VerticalTextAlignment="End" FontSize="Subtitle"></Label>
+                    </Grid>
+                    
+                </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    
+  </ListView>
+</ContentPage>

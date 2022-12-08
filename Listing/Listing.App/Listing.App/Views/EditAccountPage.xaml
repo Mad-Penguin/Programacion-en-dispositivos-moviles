@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listing.App.Views.EditAccountPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Edit your profile" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+
+            <Grid Padding="40,20,40,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Username" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry x:Name="txt_username" Placeholder="" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" IsEnabled="False"></Entry>
+
+                <Label Text="Email" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry x:Name="txt_email" Placeholder="" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" IsEnabled="False"></Entry>
+
+                <Label Text="Name" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry x:Name="txt_name" Placeholder="" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" IsEnabled="False"></Entry>
+
+                <Label Text="Last name" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry x:Name="txt_last_name" Placeholder="" Grid.Row="3" Grid.Column="1" VerticalOptions="Center" IsEnabled="False"></Entry>
+
+                <Label Text="Age" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry x:Name="txt_age" Placeholder="" Grid.Row="4" Grid.Column="1" VerticalOptions="Center" IsEnabled="False"></Entry>
+
+                <Label Text="Image (URL)" Grid.Row="5" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry x:Name="txt_url_image" Placeholder="" Grid.Row="5" Grid.Column="1" VerticalOptions="Center"></Entry>
+
+                <Label Text="Institution" Grid.Row="6" Grid.Column="0" VerticalOptions="Center"></Label>
+                <Entry x:Name="txt_institution" Placeholder="" Grid.Row="6" Grid.Column="1" VerticalOptions="Center"></Entry>
+
+                <Button x:Name="btn_save" Grid.Row="7" Grid.Column="1" Text="Save" HorizontalOptions="End"></Button>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

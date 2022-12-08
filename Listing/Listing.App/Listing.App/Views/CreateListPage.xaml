@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Listing.App.Views.CreateListPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Create a List"
+                HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Medium"/>
+
+            <Entry x:Name="txt_list_title" Placeholder="Title" Margin="20,20,20,0"></Entry>
+            <Button x:Name="btn_create" Text="Create" Margin="20,0,20,0" HorizontalOptions="EndAndExpand"></Button>
+
+            <Entry x:Name="txt_list_content" IsEnabled="False" IsVisible="False" Placeholder="Content" Margin="20,10,20,0"></Entry>
+            <Button x:Name="btn_add_content" IsEnabled="False" IsVisible="False" Text="Add" Margin="20,0,20,0" HorizontalOptions="EndAndExpand"></Button>
+
+            <ListView x:Name="ListContentView"
+            ItemsSource="{Binding Items}"
+            CachingStrategy="RecycleElement">
+
+                <!--Custom View Cells-->
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+
+                                <Label Text="{Binding Content}" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Small" FontAttributes="Bold"></Label>
+                                <!--
+                        <Button x:Name="edit_list" Grid.Column="1" Text="Edit"  FontSize="Small" BackgroundColor="LightSlateGray"></Button>
+                        <Button x:Name="delete_list" Grid.Column="2" Text="Delete" FontSize="Small" BackgroundColor="#FF6464" ></Button>
+                        
+                        <Label Text="{Binding OwnerUsername}" Grid.Column="1" VerticalTextAlignment="End" FontSize="Small"></Label>
+                        -->
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
